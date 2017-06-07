@@ -58,7 +58,7 @@
 							aria-hidden="true"></i> Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#loginModal">
+                    <li><a id="loginModalBtn">
                     	<span class="glyphicon glyphicon-log-in"></span> Login</a>
                     </li>
                 </ul>
@@ -71,7 +71,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" id="closeLoginModal">&times;</button>
                 <h4 class="modal-title">Login </h4>
             </div>
             <div class="modal-body">
@@ -85,7 +85,7 @@
 							<label><input type="checkbox" name="approve" value="">Remember me</label>
 						</div>
 						<button type="submit" class="btn btn-info btn-sm">Sign In</button>
-						<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-default btn-sm" id="cancelLoginModal">Cancel</button>
 					</div>
 				</form>
             </div>
@@ -97,7 +97,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" id="closeReservationModal">&times;</button>
                 <h4 class="modal-title">Reservations</h4>
             </div>
             <div class="modal-body">
@@ -157,7 +157,7 @@
 					<div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-primary">Reserve</button>
-                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-default btn-sm" id="cancelReservationModal"">Cancel</button>
                         </div>
                     </div>
                     <div class="alert alert-warning alert-dismissible" role="alert">
@@ -192,7 +192,7 @@
                      		data-placement="bottom" href="#table_reserve"> Reserve Table </a> -->
 						<!--  <a type="button" class="btn btn-warning btn-block"
                     		href="#table_reserve"> Reserve Table </a>      being enhanced to trigger modal window next line -->
-                    <a type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#reservationModal">
+                    <a type="button" class="btn btn-warning btn-block" id="reservationModalBtn">
                     	<span class="glyphicon glyphicon-glass"></span> Reserve Table </a>            		
 				</div>
             </div>
@@ -457,6 +457,24 @@
             });
             $("#carousel-play").click(function(){
                 $("#mycarousel").carousel('cycle');
+            });
+            $("#loginModalBtn").click(function(){
+            	$('#loginModal').modal('toggle');
+            });
+            $("#closeLoginModal").click(function(){
+            	$('#loginModal').modal('toggle');
+            });
+            $("#cancelLoginModal").click(function(){
+            	$('#loginModal').modal('toggle');
+            });
+            $("#reservationModalBtn").click(function(){
+            	$("#reservationModal").modal('toggle');
+            });
+            $("#closeReservationModal").click(function(){
+            	$('#reservationModal').modal('toggle');
+            });
+            $("#cancelReservationModal").click(function(){
+            	$('#reservationModal').modal('toggle');
             });
         });
     </script>
